@@ -7,14 +7,19 @@ Prerequisites or suggestions:
 <ul>
   <li>1. Make sure unity is configured to use github: https://unity3d.com/learn/tutorials/topics/tips/large-project-organisation
 </li>
+  <li>2. Make sure to have Git LFS enabled - https://help.github.com/articles/versioning-large-files/</li> 
 </ul>
 
+
 Project structure:
+![Project structure](https://github.com/DMINATOR/Time-Prism-Main/blob/master/Readme/Project_structure.png?raw=true "Title")
+
 <ul>
   <li>The time prism (Root)</li>
     <li> - 'Time-Prism-Main' cloned from repository (https://github.com/DMINATOR/Time-Prism-Main.git) </li>
     <li> - 'DK-Unity-Shared' cloned from repository (https://github.com/DMINATOR/DK-Unity-Shared.git ) </li>
 </ul>
+
 
 Following these steps:
 
@@ -27,3 +32,5 @@ Following these steps:
   <li>5. Make sure to point to Time-Prism-Main as target and DK-Unity-Shared as source</li>
   <li>6. Click GO, this should finish process and create links between projects</li>
 </ul>
+
+![Project structure](https://github.com/DMINATOR/Time-Prism-Main/blob/master/Readme/AppToRun.png?raw=true "Title")
