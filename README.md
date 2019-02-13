@@ -25,5 +25,5 @@ Following these steps:
   
   <li>4. In DK-Unity-Shared execute NewProjectInstallationTool.exe /li>
   <li>5. Make sure to point to Time-Prism-Main as target and DK-Unity-Shared as source</li>
-  <li>6. Run the application</li>
+  <li>6. Click GO, this should finish process and create links between projects</li>
 </ul>
