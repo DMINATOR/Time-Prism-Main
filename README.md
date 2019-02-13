@@ -29,7 +29,7 @@ Following these steps:
   <li>2. Clone this repository and put it into (The Time Prism) ie (Time-Prism-Main)</li>
   <li>3. Clone https://github.com/DMINATOR/DK-Unity-Shared.git into (The Time Prism) ie (DK-Unity-Shared)</li>
   
-  <li>4. In DK-Unity-Shared execute NewProjectInstallationTool.exe /li>
+  <li>4. In DK-Unity-Shared execute NewProjectInstallationTool.exe </li>
   <li>5. Make sure to point to Time-Prism-Main as target and DK-Unity-Shared as source</li>
   <li>6. Click GO, this should finish process and create links between projects</li>
 </ul>
