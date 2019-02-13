@@ -12,8 +12,8 @@ Prerequisites or suggestions:
 Project structure:
 <ul>
   <li>The time prism (Root)</li>
-    <li>'Time-Prism-Main' cloned from repository (https://github.com/DMINATOR/Time-Prism-Main.git) </li>
-    <li>'DK-Unity-Shared' cloned from repository (https://github.com/DMINATOR/DK-Unity-Shared.git ) </li>
+    <li> - 'Time-Prism-Main' cloned from repository (https://github.com/DMINATOR/Time-Prism-Main.git) </li>
+    <li> - 'DK-Unity-Shared' cloned from repository (https://github.com/DMINATOR/DK-Unity-Shared.git ) </li>
 </ul>
 
 Following these steps:
