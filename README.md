@@ -12,7 +12,8 @@ Prerequisites or suggestions:
 
 
 Project structure:
-[Project structure](https://github.com/DMINATOR/Time-Prism-Main/blob/master/Readme/Project_structure.png?raw=true "Title")
+<br/>
+![Project structure](https://github.com/DMINATOR/Time-Prism-Main/blob/master/Readme/Project_structure.png?raw=true "Title")
 
 <ul>
   <li>The time prism (Root)</li>
