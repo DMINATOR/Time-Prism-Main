@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class MoveEntity : MonoBehaviour
 {
-    public float Force;
+    public float MovementForce;
+    public float RotationForce;
 
     public InputButton ButtonMoveHorizontal;
     public InputButton ButtonMoveVertical;
+
+    public InputButton ButtonRotation;
 
     public Camera Camera;
 
@@ -16,17 +19,20 @@ public class MoveEntity : MonoBehaviour
     {
         if (Input.GetButton(ButtonMoveHorizontal.KeyName))
         {
-            float horizontal = Input.GetAxis(ButtonMoveHorizontal.KeyName) * Force * Time.deltaTime;
+            float horizontal = Input.GetAxis(ButtonMoveHorizontal.KeyName) * MovementForce * Time.deltaTime;
 
             transform.Translate(Vector3.right * horizontal, Camera.transform);
         }
 
         if (Input.GetButton(ButtonMoveVertical.KeyName))
         {
-            float vertical = Input.GetAxis(ButtonMoveVertical.KeyName) * Force * Time.deltaTime;
+            float vertical = Input.GetAxis(ButtonMoveVertical.KeyName) * MovementForce * Time.deltaTime;
 
             transform.Translate(Vector3.up * vertical, Camera.transform);
         }
-        //else - skip any other key
+
+        float rotation = Input.GetAxis(ButtonRotation.KeyName) * RotationForce * Time.deltaTime;
+
+        transform.Rotate(Vector3.up, rotation);
     }
 }
