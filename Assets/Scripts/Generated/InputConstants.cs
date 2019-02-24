@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-//Generated on: 24.02.2019 18:22.49
+//Default
 public class InputMapping
 {
 
