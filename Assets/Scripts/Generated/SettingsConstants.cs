@@ -5,14 +5,13 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-//Default
+//Generated on: 24.02.2019 18:24.22
 public class SettingsConstants
 {
 
     public enum Name
     {
-		MusicVolume,
-		SoundVolume,
+		BLOCK_SIZE,
 
     }
 
@@ -20,19 +19,11 @@ public class SettingsConstants
     {
 		SettingsController.Instance.AddSetting(new SettingValue()
 		{
-			Name = Enum.GetName(typeof(SettingsConstants.Name), Name.MusicVolume),
-			Type = SettingValueType.Float,
-			MinValue = "0.0f",
-			DefaultValue = "0.5f",
-			MaxValue = "1.0f"
-		});
-		SettingsController.Instance.AddSetting(new SettingValue()
-		{
-			Name = Enum.GetName(typeof(SettingsConstants.Name), Name.SoundVolume),
-			Type = SettingValueType.Float,
-			MinValue = "0.0f",
-			DefaultValue = "0.7f",
-			MaxValue = "1.0f"
+			Name = Enum.GetName(typeof(SettingsConstants.Name), Name.BLOCK_SIZE),
+			Type = SettingValueType.Integer,
+			MinValue = "0",
+			DefaultValue = "100",
+			MaxValue = "100000"
 		});
 
     }
