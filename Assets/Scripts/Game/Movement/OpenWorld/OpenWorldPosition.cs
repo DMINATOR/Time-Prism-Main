@@ -42,7 +42,9 @@ public class OpenWorldPosition : MonoBehaviour
         UnityZ = transform.position.z;
 
         //block correction
-        BlockX = (long)transform.position.x % BlockSize;
-        BlockZ = (long)transform.position.z % BlockSize;
+        BlockX = (long)(transform.position.x / BlockSize);
+        BlockZ = (long)(transform.position.z / BlockSize);
+
+        OpenWorldController.Instance.Reposition(BlockX, BlockZ);
     }
 }
