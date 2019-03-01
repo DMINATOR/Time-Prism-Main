@@ -7,7 +7,7 @@ public class OpenWorldController : MonoBehaviour
     //Cached blocks
     [ReadOnly]
     [Tooltip("Currently loaded and active blocks")]
-    public OpenWorldBlock[] Blocks;
+    public GameObject[] Blocks;
 
     [ReadOnly]
     [Tooltip("Current block position of the center")]
@@ -17,8 +17,23 @@ public class OpenWorldController : MonoBehaviour
     [Tooltip("Current block position of the center")]
     public long BlockZ;
 
+    [ReadOnly]
+    [Tooltip("Half Block Size")]
+    public int HalfBlockSize;
+
+    [ReadOnly]
+    [Tooltip("Current size of the block in Unity units (loaded from Settings)")]
+    public int BlockSize;
+
+    [ReadOnly]
+    [Tooltip("Settings to load BLOCK_SIZE value")]
+    public SettingsConstants.Name BLOCK_SIZE_SETTING_NAME = SettingsConstants.Name.BLOCK_SIZE;
+
     //Public instance to game controller
     public static OpenWorldController Instance = null;
+
+
+    public GameObject OpenWorldBlockPrefab;
 
     private void Awake()
     {
@@ -35,6 +50,9 @@ public class OpenWorldController : MonoBehaviour
 
     private void Start()
     {
+        BlockSize = SettingsController.Instance.GetValue<int>(BLOCK_SIZE_SETTING_NAME);
+        HalfBlockSize = BlockSize / 2;
+
         UpdateBlocks();
     }
 
@@ -44,16 +62,24 @@ public class OpenWorldController : MonoBehaviour
         if( Blocks.Length != 9 )
         {
             //initial load
-            Blocks = new OpenWorldBlock[9];
+            Blocks = new GameObject[9];
 
-            for(int i = 0; i < Blocks.Length; i++)
-            {
-                //Blocks[i] = Instantiate(Instance.PhysicsModel, spawn_point.transform.position, Quaternion.identity);
-            }
+            //instantiate initial array of blocks
+            Blocks[0] = Instantiate(OpenWorldBlockPrefab, new Vector3(-BlockSize, 0, -BlockSize), Quaternion.identity, this.gameObject.transform);
+            Blocks[1] = Instantiate(OpenWorldBlockPrefab, new Vector3(0, 0, -BlockSize), Quaternion.identity, this.gameObject.transform);
+            Blocks[2] = Instantiate(OpenWorldBlockPrefab, new Vector3(BlockSize, 0, -BlockSize), Quaternion.identity, this.gameObject.transform);
+
+            Blocks[3] = Instantiate(OpenWorldBlockPrefab, new Vector3(-BlockSize, 0, 0), Quaternion.identity, this.gameObject.transform);
+            Blocks[4] = Instantiate(OpenWorldBlockPrefab, new Vector3(0, 0, 0), Quaternion.identity, this.gameObject.transform);
+            Blocks[5] = Instantiate(OpenWorldBlockPrefab, new Vector3(BlockSize, 0, 0), Quaternion.identity, this.gameObject.transform);
+
+            Blocks[6] = Instantiate(OpenWorldBlockPrefab, new Vector3(-BlockSize, 0, BlockSize), Quaternion.identity, this.gameObject.transform);
+            Blocks[7] = Instantiate(OpenWorldBlockPrefab, new Vector3(0, 0, BlockSize), Quaternion.identity, this.gameObject.transform);
+            Blocks[8] = Instantiate(OpenWorldBlockPrefab, new Vector3(BlockSize, 0, BlockSize), Quaternion.identity, this.gameObject.transform);
         }
         else
         {
-
+            //update cycle
         }
     }
 

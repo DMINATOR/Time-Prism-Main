@@ -20,30 +20,17 @@ public class OpenWorldPosition : MonoBehaviour
     [Tooltip("Current position in Unity coordinates")]
     public float UnityZ;
 
-    [ReadOnly]
-    [Tooltip("Current size of the block in Unity units (loaded from Settings)")]
-    public int BlockSize;
-
-    [ReadOnly]
-    [Tooltip("Settings to load BLOCK_SIZE value")]
-    public SettingsConstants.Name BLOCK_SIZE_SETTING_NAME = SettingsConstants.Name.BLOCK_SIZE;
-
-    public void Start()
+    public void Translate(Vector3 vector, Transform cameraTransform, Transform shipTransform)
     {
-        BlockSize = SettingsController.Instance.GetValue<int>(BLOCK_SIZE_SETTING_NAME);
-    }
-
-    public void Translate(Vector3 vector, Transform transform)
-    {
-        this.transform.Translate(vector, transform);
+        this.transform.Translate(vector, cameraTransform);
 
         //save current unity coordinates
-        UnityX = transform.position.x;
-        UnityZ = transform.position.z;
+        UnityX = shipTransform.position.x;
+        UnityZ = shipTransform.position.z;
 
         //block correction
-        BlockX = (long)(transform.position.x / BlockSize);
-        BlockZ = (long)(transform.position.z / BlockSize);
+        BlockX = (long)(shipTransform.position.x / OpenWorldController.Instance.HalfBlockSize);
+        BlockZ = (long)(shipTransform.position.z / OpenWorldController.Instance.HalfBlockSize);
 
         OpenWorldController.Instance.Reposition(BlockX, BlockZ);
     }

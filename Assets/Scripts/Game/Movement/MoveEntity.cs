@@ -14,6 +14,7 @@ public class MoveEntity : MonoBehaviour
     public InputButton ButtonRotation;
 
     public Camera Camera;
+    public GameObject Ship;
 
     public OpenWorldPosition Position;
 
@@ -38,7 +39,7 @@ public class MoveEntity : MonoBehaviour
 
         float rotation = Input.GetAxis(ButtonRotation.KeyName) * RotationForce * Time.deltaTime;
 
-        Position.Translate(vector, Camera.transform);
+        Position.Translate(vector, Camera.transform, Ship.transform);
         transform.Rotate(Vector3.up, rotation);
     }
 }
