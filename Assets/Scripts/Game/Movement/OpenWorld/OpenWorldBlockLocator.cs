@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class OpenWorldBlockLocator : MonoBehaviour
 {
-    public LineRenderer LineRenderer;
+    public LineRenderer DebugLineRenderer;
+    public TextMesh DebugBlockName; 
 }

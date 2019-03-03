@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class OpenWorldController : MonoBehaviour
 {
-    //Cached blocks
-   // [ReadOnly]
-    //[Tooltip("Currently loaded and active blocks")]
-    //public GameObject[] BlocksAsGameObjects;
 
     [ReadOnly]
     [Tooltip("Currently loaded and active blocks")]
@@ -60,6 +56,13 @@ public class OpenWorldController : MonoBehaviour
         UpdateBlocks();
     }
 
+    private void RefreshBlocks()
+    {
+        for(int i = 0; i < Blocks.Length; i++)
+        {
+            Blocks[i].Refresh();
+        }
+    }
 
     private void UpdateBlocks()
     {
@@ -108,6 +111,8 @@ public class OpenWorldController : MonoBehaviour
             Blocks[6].BlockX = -1; Blocks[6].BlockZ = 1;
             Blocks[7].BlockX = 0; Blocks[7].BlockZ = 1;
             Blocks[8].BlockX = 1; Blocks[8].BlockZ = 1;
+
+            RefreshBlocks();
         }
         else
         {
@@ -129,6 +134,8 @@ public class OpenWorldController : MonoBehaviour
             //remember current position
             this.BlockX = BlockX;
             this.BlockZ = BlockZ;
+
+            //assign current block and load it
         }
     }
 }

@@ -14,10 +14,14 @@ public class OpenWorldBlock : MonoBehaviour
     [Tooltip("Current block position in the universe")]
     public long BlockZ;
 
+    [ReadOnly]
+    [Tooltip("Indicates that this block was Loaded")]
+    public bool Loaded;
+
     public void Start()
     {
         //make lines to match the size of the block
-        Locator.LineRenderer.SetPositions(new Vector3[]
+        Locator.DebugLineRenderer.SetPositions(new Vector3[]
         {
             new Vector3( OpenWorldController.Instance.HalfBlockSize, 0, -OpenWorldController.Instance.HalfBlockSize),
             new Vector3( OpenWorldController.Instance.HalfBlockSize, 0, OpenWorldController.Instance.HalfBlockSize),
@@ -25,5 +29,24 @@ public class OpenWorldBlock : MonoBehaviour
             new Vector3( -OpenWorldController.Instance.HalfBlockSize, 0, -OpenWorldController.Instance.HalfBlockSize),
             new Vector3( OpenWorldController.Instance.HalfBlockSize, 0, -OpenWorldController.Instance.HalfBlockSize)
         });
+    }
+
+    public void Refresh()
+    {
+        Locator.DebugBlockName.text = $"{BlockX},{BlockZ}";
+    }
+
+    public void GenerateIfNotLoaded()
+    {
+        if( Loaded )
+        {
+            //skip was generated already
+        }
+        else
+        {
+            Locator.DebugBlockName.color = UnityEngine.Color.green;
+
+            Loaded = true;
+        }
     }
 }
