@@ -33,7 +33,9 @@ public class OpenWorldBlock : MonoBehaviour
 
     public void Refresh()
     {
+        Log.Instance.Info(OpenWorldController.LOG_SOURCE, $"Block [{BlockX}, {BlockZ}] Refresh");
         Locator.DebugBlockName.text = $"{BlockX},{BlockZ}";
+        Loaded = false; //unload if anything was loaded
     }
 
     public void GenerateIfNotLoaded()
@@ -44,6 +46,7 @@ public class OpenWorldBlock : MonoBehaviour
         }
         else
         {
+            Log.Instance.Info(OpenWorldController.LOG_SOURCE, $"Block [{BlockX}, {BlockZ}] Loaded");
             Locator.DebugBlockName.color = UnityEngine.Color.green;
 
             Loaded = true;
