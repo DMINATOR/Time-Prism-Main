@@ -1,13 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using System;
 
 public class OpenWorldController : MonoBehaviour
 {
 
     [ReadOnly]
     [Tooltip("Currently loaded and active blocks")]
+    //These are loaded initially and re-used
     public OpenWorldBlock[] Blocks;
+
+    //position in the oldes block
+    private int BlocksOldestElement = 0;
 
     [ReadOnly]
     [Tooltip("Current block position of the center")]
@@ -53,7 +59,7 @@ public class OpenWorldController : MonoBehaviour
         BlockSize = SettingsController.Instance.GetValue<int>(BLOCK_SIZE_SETTING_NAME);
         HalfBlockSize = BlockSize / 2;
 
-        UpdateBlocks();
+        UpdateBlocks(0,0);
     }
 
     private void RefreshBlocks()
@@ -64,7 +70,7 @@ public class OpenWorldController : MonoBehaviour
         }
     }
 
-    private void UpdateBlocks()
+    private void UpdateBlocks(long BlockX, long BlockZ)
     {
         if(Blocks.Length != 9 )
         {
@@ -101,26 +107,64 @@ public class OpenWorldController : MonoBehaviour
 
             //correct block positions
             Blocks[0].BlockX = -1; Blocks[0].BlockZ = -1;
-            Blocks[1].BlockX = 0; Blocks[1].BlockZ = -1;
-            Blocks[2].BlockX = 1; Blocks[2].BlockZ = -1;
+            Blocks[1].BlockX = 1; Blocks[1].BlockZ = -1;
+            Blocks[2].BlockX = 2; Blocks[2].BlockZ = -1;
 
-            Blocks[3].BlockX = -1; Blocks[3].BlockZ = 0;
-            Blocks[4].BlockX = 0; Blocks[4].BlockZ = 0;
-            Blocks[5].BlockX = 1; Blocks[5].BlockZ = 0;
+            Blocks[3].BlockX = -1; Blocks[3].BlockZ = 1;
+            Blocks[4].BlockX = 1; Blocks[4].BlockZ = 1;
+            Blocks[5].BlockX = 2; Blocks[5].BlockZ = 1;
 
-            Blocks[6].BlockX = -1; Blocks[6].BlockZ = 1;
-            Blocks[7].BlockX = 0; Blocks[7].BlockZ = 1;
-            Blocks[8].BlockX = 1; Blocks[8].BlockZ = 1;
+            Blocks[6].BlockX = -1; Blocks[6].BlockZ = 2;
+            Blocks[7].BlockX = 1; Blocks[7].BlockZ = 2;
+            Blocks[8].BlockX = 2; Blocks[8].BlockZ = 2;
+
+            BlocksOldestElement = 0;
 
             RefreshBlocks();
         }
         else
         {
             //update cycle
+
+            //find matching block
+            var index = Array.FindIndex(Blocks, x => x.BlockX == BlockX && x.BlockZ == BlockZ);
+
+            if( index == -1 )
+            {
+                //NOT FOUND
+
+                //reuse
+                Blocks[BlocksOldestElement].BlockX = BlockX;
+                Blocks[BlocksOldestElement].BlockZ = BlockZ;
+
+
+                if (BlockX > 0)
+                {
+                    BlockX -= 1;
+                }
+                //else, ignore
+
+                if (BlockZ > 0)
+                {
+                    BlockZ -= 1;
+                }
+                //else, ignore
+
+                Blocks[BlocksOldestElement].transform.position = new Vector3( BlockSize * BlockX, 0, BlockSize * BlockZ);
+
+                Blocks[BlocksOldestElement].Refresh();
+
+                //move to the next
+                BlocksOldestElement = (BlocksOldestElement + 1) >= Blocks.Length ? 0 : (BlocksOldestElement + 1);
+            }
+            else
+            {
+                //Found, already exists - don't do anything
+            }
         }
     }
 
-    public void Reposition(long BlockX, long BlockZ )
+    public void Reposition(long BlockX, long BlockZ)
     {
         if( (this.BlockX == BlockX ) && (this.BlockZ == BlockZ) )
         {
@@ -129,13 +173,14 @@ public class OpenWorldController : MonoBehaviour
         else
         {
             //block position changed
-            UpdateBlocks();
+            UpdateBlocks(BlockX, BlockZ);
 
             //remember current position
             this.BlockX = BlockX;
             this.BlockZ = BlockZ;
 
             //assign current block and load it
+
         }
     }
 }

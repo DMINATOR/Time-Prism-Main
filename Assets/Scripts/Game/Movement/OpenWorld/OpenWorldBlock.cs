@@ -23,11 +23,11 @@ public class OpenWorldBlock : MonoBehaviour
         //make lines to match the size of the block
         Locator.DebugLineRenderer.SetPositions(new Vector3[]
         {
-            new Vector3( OpenWorldController.Instance.HalfBlockSize, 0, -OpenWorldController.Instance.HalfBlockSize),
-            new Vector3( OpenWorldController.Instance.HalfBlockSize, 0, OpenWorldController.Instance.HalfBlockSize),
-            new Vector3( -OpenWorldController.Instance.HalfBlockSize, 0, OpenWorldController.Instance.HalfBlockSize),
-            new Vector3( -OpenWorldController.Instance.HalfBlockSize, 0, -OpenWorldController.Instance.HalfBlockSize),
-            new Vector3( OpenWorldController.Instance.HalfBlockSize, 0, -OpenWorldController.Instance.HalfBlockSize)
+            new Vector3( 0, 0, 0),
+            new Vector3( OpenWorldController.Instance.BlockSize, 0, 0),
+            new Vector3( OpenWorldController.Instance.BlockSize, 0, OpenWorldController.Instance.BlockSize),
+            new Vector3( 0, 0, OpenWorldController.Instance.BlockSize),
+            new Vector3( 0, 0, 0)
         });
     }
 
