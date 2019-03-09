@@ -6,20 +6,42 @@ using System;
 
 public class OpenWorldController : MonoBehaviour
 {
-    [Tooltip("Locator")]
-    public OpenWorldControllerLocator Locator;
+    //Not exposed
 
+    //position in the oldes block
+    private int BlocksOldestElement = 0;
+
+    [Header("Constants")]
     [ReadOnly]
     [Tooltip("Logging source")]
     public static string LOG_SOURCE = "OpenWorld";
 
-    [ReadOnly]
-    [Tooltip("Currently loaded and active blocks")]
-    //These are loaded initially and re-used
-    public OpenWorldBlock[] Blocks = null;
 
-    //position in the oldes block
-    private int BlocksOldestElement = 0;
+    //Public instance to game controller
+    public static OpenWorldController Instance = null;
+
+
+
+    //Exposed
+
+    [Header("Locator")]
+
+    [Tooltip("Locator")]
+    public OpenWorldControllerLocator Locator;
+
+
+    [Header("Prefabs")]
+
+    [ReadOnly]
+    [Tooltip("Settings to load BLOCK_SIZE value")]
+    public GameObject OpenWorldBlockPrefab;
+
+
+    [Header("Settings")]
+
+    [ReadOnly]
+    [Tooltip("Settings to load BLOCK_SIZE value")]
+    public SettingsConstants.Name BLOCK_SIZE_SETTING_NAME = SettingsConstants.Name.BLOCK_SIZE;
 
     [ReadOnly]
     [Tooltip("Current block position")]
@@ -37,9 +59,6 @@ public class OpenWorldController : MonoBehaviour
     [Tooltip("Current block that is considered to be a center 0,0")]
     public long BlockCenterZ;
 
-    [ReadOnly]
-    [Tooltip("Current block the player is in")]
-    public OpenWorldBlock CurrentBlock;
 
     [ReadOnly]
     [Tooltip("Half Block Size")]
@@ -49,15 +68,18 @@ public class OpenWorldController : MonoBehaviour
     [Tooltip("Current size of the block in Unity units (loaded from Settings)")]
     public int BlockSize;
 
+
+    [Header("Status")]
+
+
     [ReadOnly]
-    [Tooltip("Settings to load BLOCK_SIZE value")]
-    public SettingsConstants.Name BLOCK_SIZE_SETTING_NAME = SettingsConstants.Name.BLOCK_SIZE;
+    [Tooltip("Currently loaded and active blocks")]
+    //These are loaded initially and re-used
+    public OpenWorldBlock[] Blocks = null;
 
-    //Public instance to game controller
-    public static OpenWorldController Instance = null;
-
-
-    public GameObject OpenWorldBlockPrefab;
+    [ReadOnly]
+    [Tooltip("Current block the player is in")]
+    public OpenWorldBlock CurrentBlock;
 
     private void Awake()
     {

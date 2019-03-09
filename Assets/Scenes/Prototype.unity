@@ -407,15 +407,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Locator: {fileID: 1562023577}
-  Blocks: []
-  BlockX: 0
-  BlockZ: 0
-  CurrentBlock: {fileID: 0}
-  HalfBlockSize: 0
-  BlockSize: 0
-  BLOCK_SIZE_SETTING_NAME: 0
   OpenWorldBlockPrefab: {fileID: 2054739238023298882, guid: 28fde52f996c70e438948b0e41b7ca30,
     type: 3}
+  BLOCK_SIZE_SETTING_NAME: 0
+  BlockX: 0
+  BlockZ: 0
+  BlockCenterX: 0
+  BlockCenterZ: 0
+  HalfBlockSize: 0
+  BlockSize: 0
+  Blocks: []
+  CurrentBlock: {fileID: 0}
 --- !u!114 &1562023577
 MonoBehaviour:
   m_ObjectHideFlags: 0
