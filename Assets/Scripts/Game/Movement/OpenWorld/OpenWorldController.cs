@@ -22,12 +22,20 @@ public class OpenWorldController : MonoBehaviour
     private int BlocksOldestElement = 0;
 
     [ReadOnly]
-    [Tooltip("Current block position of the center")]
+    [Tooltip("Current block position")]
     public long BlockX;
 
     [ReadOnly]
-    [Tooltip("Current block position of the center")]
+    [Tooltip("Current block position")]
     public long BlockZ;
+
+    [ReadOnly]
+    [Tooltip("Current block that is considered to be a center 0,0")]
+    public long BlockCenterX;
+
+    [ReadOnly]
+    [Tooltip("Current block that is considered to be a center 0,0")]
+    public long BlockCenterZ;
 
     [ReadOnly]
     [Tooltip("Current block the player is in")]
