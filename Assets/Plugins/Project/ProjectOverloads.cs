@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,5 +7,21 @@ using UnityEngine;
 //SAVE GAME overloads
 public partial class SaveGameData : DKAsset
 {
-    public int TestField;
+    public List<SaveSlotInstance> SaveSlots;
+}
+
+
+[System.Serializable]
+public class SaveSlotInstance
+{
+    //Randomly generated world seed
+    public int RandomSeed;
+
+    //Position of the player
+    public int BlockX;
+    public int BlockZ;
+
+    //Info
+    public DateTimeSerializer Created;
+    public DateTimeSerializer Modified;
 }
