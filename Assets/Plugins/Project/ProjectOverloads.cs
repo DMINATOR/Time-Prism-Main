@@ -21,6 +21,9 @@ public class SaveSlotInstance
     public int BlockX;
     public int BlockZ;
 
+    //Indicates that this save slot is current
+    public bool Current;
+
     //Info
     public DateTimeSerializer Created;
     public DateTimeSerializer Modified;
