@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 669066068}
   - component: {fileID: 669066067}
+  - component: {fileID: 669066069}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -141,6 +142,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1c75fcfec5b5be4f8fee13d411e9a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Locator: {fileID: 669066069}
+  CurrentSaveInstance:
+    RandomSeed: 0
+    BlockX: 0
+    BlockZ: 0
+    Current: 0
+    Created:
+      _dateTimeValue: 01/01/0001 00:00:00
+    Modified:
+      _dateTimeValue: 01/01/0001 00:00:00
 --- !u!4 &669066068
 Transform:
   m_ObjectHideFlags: 0
@@ -155,6 +166,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &669066069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669066066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6d04f1ab5a57b47a7bcd3f0ef1dd60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveEntity: {fileID: 733414523}
 --- !u!1 &733414521
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using System;
 
+[RequireComponent(typeof(OpenWorldControllerLocator))]
 public class OpenWorldController : MonoBehaviour
 {
     //Not exposed
@@ -98,8 +99,12 @@ public class OpenWorldController : MonoBehaviour
     {
         BlockSize = SettingsController.Instance.GetValue<int>(BLOCK_SIZE_SETTING_NAME);
         HalfBlockSize = BlockSize / 2;
+    }
 
-        UpdateBlocks(0,0);
+    public void SetUniverseCenter(long blockX, long blockZ)
+    {
+        BlockCenterX = blockX;
+        BlockCenterZ = blockZ;
     }
 
     private void UpdateBlock(int element, long BlockX, long BlockZ)
@@ -120,19 +125,26 @@ public class OpenWorldController : MonoBehaviour
         openWorldBlock.BlockX = BlockX;
         openWorldBlock.BlockZ = BlockZ;
 
-        if (BlockX > 0)
-        {
-            BlockX -= 1;
-        }
-        //else, ignore
 
-        if (BlockZ > 0)
-        {
-            BlockZ -= 1;
-        }
-        //else, ignore
+        long BlockDeltaX = BlockX - BlockCenterX;
+        long BlockDeltaZ = BlockZ - BlockCenterZ;
 
-        openWorldBlock.transform.position = new Vector3(BlockSize * BlockX, 0, BlockSize * BlockZ);
+
+        openWorldBlock.transform.position = new Vector3(BlockSize * BlockDeltaX, 0, BlockSize * BlockDeltaZ);
+
+        //if (BlockX > 0)
+        //{
+        //    BlockX -= 1;
+        //}
+        ////else, ignore
+
+        //if (BlockZ > 0)
+        //{
+        //    BlockZ -= 1;
+        //}
+        ////else, ignore
+
+        //openWorldBlock.transform.position = new Vector3(BlockSize * BlockX, 0, BlockSize * BlockZ);
 
         openWorldBlock.Refresh();
 
@@ -146,17 +158,17 @@ public class OpenWorldController : MonoBehaviour
             //initial load - create blocks and fill them up
             Blocks = new OpenWorldBlock[9];
 
-            UpdateBlock(0, -1, -1);
-            UpdateBlock(1, 1, -1);
-            UpdateBlock(2, 2, -1);
+            UpdateBlock(0, BlockCenterX - 1, BlockCenterZ - 1);
+            UpdateBlock(1, BlockCenterX, BlockCenterZ - 1);
+            UpdateBlock(2, BlockCenterX + 1, BlockCenterZ - 1);
 
-            UpdateBlock(3, -1, 1);
-            UpdateBlock(4, 1, 1);
-            UpdateBlock(5, 2, 1);
+            UpdateBlock(3, BlockCenterX - 1, BlockCenterZ);
+            UpdateBlock(4, BlockCenterX, BlockCenterZ);
+            UpdateBlock(5, BlockCenterX + 1, BlockCenterZ);
 
-            UpdateBlock(6, -1, 2);
-            UpdateBlock(7, 1, 2);
-            UpdateBlock(8, 2, 2);
+            UpdateBlock(6, BlockCenterX - 1, BlockCenterZ + 1);
+            UpdateBlock(7, BlockCenterX, BlockCenterZ + 1);
+            UpdateBlock(8, BlockCenterX + 1, BlockCenterZ + 1);
 
             //assign first block as the oldest one
             BlocksOldestElement = 0;

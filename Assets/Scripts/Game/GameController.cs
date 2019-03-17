@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(GameControllerLocator))]
 public class GameController : MonoBehaviour
 {
     SaveGameData _saveData;
@@ -15,6 +16,14 @@ public class GameController : MonoBehaviour
 
     //Public instance to game controller
     public static GameController Instance = null;
+
+
+    //Exposed
+
+    [Header("Locator")]
+
+    [Tooltip("Locator")]
+    public GameControllerLocator Locator;
 
     [Tooltip("Current Save Instance")]
     public SaveSlotInstance CurrentSaveInstance;
@@ -61,6 +70,11 @@ public class GameController : MonoBehaviour
     {
         LoadGameData();
 
+        StartGame();
+    }
 
+    private void StartGame()
+    {
+        OpenWorldController.Instance.SetUniverseCenter(CurrentSaveInstance.BlockX, CurrentSaveInstance.BlockZ);
     }
 }
