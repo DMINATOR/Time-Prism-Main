@@ -195,7 +195,7 @@ public class OpenWorldController : MonoBehaviour
 
     public void Reposition(long BlockX, long BlockZ)
     {
-        if( (this.BlockX == BlockX ) && (this.BlockZ == BlockZ) )
+        if ( (Blocks.Length != 0) && (this.BlockX == BlockX ) && (this.BlockZ == BlockZ) )
         {
             //nothing changed - skip
         }

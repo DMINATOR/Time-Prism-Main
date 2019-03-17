@@ -39,22 +39,24 @@ public class OpenWorldPosition : MonoBehaviour
             blockCorrectionX = OpenWorldController.Instance.BlockSize;
             worldCorrectionX -= 1;
         }
-        else
+        else if (shipTransform.position.x < 0)
         {
             blockCorrectionX = -OpenWorldController.Instance.BlockSize;
             //worldCorrectionX += 1;
         }
+        //else 0
 
         if (shipTransform.position.z > 0)
         {
             blockCorrectionZ = OpenWorldController.Instance.BlockSize;
             worldCorrectionZ -= 1;
         }
-        else
+        else if (shipTransform.position.z < 0)
         {
             blockCorrectionZ = -OpenWorldController.Instance.BlockSize;
            // worldCorrectionZ += 1;
         }
+        //else 0
 
         //block calculation
         BlockX = worldCorrectionX + (int)((shipTransform.position.x + blockCorrectionX) / OpenWorldController.Instance.BlockSize);
