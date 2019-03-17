@@ -172,6 +172,8 @@ public class OpenWorldController : MonoBehaviour
 
             //assign first block as the oldest one
             BlocksOldestElement = 0;
+
+            CurrentBlock = Blocks[4]; //center block will be considered current
         }
         else
         {
