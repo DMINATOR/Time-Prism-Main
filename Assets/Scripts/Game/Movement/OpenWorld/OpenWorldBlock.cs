@@ -31,8 +31,17 @@ public class OpenWorldBlock : MonoBehaviour
         });
     }
 
-    public void Refresh()
+    public void Refresh(long BlockX, long BlockZ)
     {
+        //correct block positions
+        this.BlockX = BlockX;
+        this.BlockZ = BlockZ;
+
+        long BlockDeltaX = BlockX - OpenWorldController.Instance.BlockCenterX;
+        long BlockDeltaZ = BlockZ - OpenWorldController.Instance.BlockCenterZ;
+
+        gameObject.transform.position = new Vector3(OpenWorldController.Instance.BlockSize * BlockDeltaX, 0, OpenWorldController.Instance.BlockSize * BlockDeltaZ);
+
         Log.Instance.Info(OpenWorldController.LOG_SOURCE, $"Block [{BlockX}, {BlockZ}] Refresh");
         Locator.DebugBlockName.text = $"{BlockX},{BlockZ}";
         Loaded = false; //unload if anything was loaded

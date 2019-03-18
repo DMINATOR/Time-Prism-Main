@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-//Generated on: 24.02.2019 20:56.43
+//Generated on: 17.03.2019 22:37.31
 public class SettingsConstants
 {
 
     public enum Name
     {
 		BLOCK_SIZE,
+		BLOCK_OUT_RESCALE,
 
     }
 
@@ -23,6 +24,14 @@ public class SettingsConstants
 			Type = SettingValueType.Integer,
 			MinValue = "0",
 			DefaultValue = "10",
+			MaxValue = "100000"
+		});
+		SettingsController.Instance.AddSetting(new SettingValue()
+		{
+			Name = Enum.GetName(typeof(SettingsConstants.Name), Name.BLOCK_OUT_RESCALE),
+			Type = SettingValueType.Integer,
+			MinValue = "0",
+			DefaultValue = "3",
 			MaxValue = "100000"
 		});
 

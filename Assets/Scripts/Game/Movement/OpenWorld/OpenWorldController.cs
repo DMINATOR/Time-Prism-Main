@@ -44,6 +44,27 @@ public class OpenWorldController : MonoBehaviour
     [Tooltip("Settings to load BLOCK_SIZE value")]
     public SettingsConstants.Name BLOCK_SIZE_SETTING_NAME = SettingsConstants.Name.BLOCK_SIZE;
 
+
+    [ReadOnly]
+    [Tooltip("Settings to load BLOCK_OUT_RESCALE value")]
+    public SettingsConstants.Name BLOCK_OUT_RESCALE = SettingsConstants.Name.BLOCK_OUT_RESCALE;
+
+    [Header("Loaded Settings")]
+
+    [ReadOnly]
+    [Tooltip("Half Block Size")]
+    public int HalfBlockSize;
+
+    [ReadOnly]
+    [Tooltip("Current size of the block in Unity units (loaded from Settings)")]
+    public int BlockSize;
+
+    [ReadOnly]
+    [Tooltip("Resets position back to center after leaving block ranges (loaded from Settings)")]
+    public int BlockOutRescale;
+
+    [Header("Variables")]
+
     [ReadOnly]
     [Tooltip("Current block position")]
     public long BlockX;
@@ -59,15 +80,6 @@ public class OpenWorldController : MonoBehaviour
     [ReadOnly]
     [Tooltip("Current block that is considered to be a center 0,0")]
     public long BlockCenterZ;
-
-
-    [ReadOnly]
-    [Tooltip("Half Block Size")]
-    public int HalfBlockSize;
-
-    [ReadOnly]
-    [Tooltip("Current size of the block in Unity units (loaded from Settings)")]
-    public int BlockSize;
 
 
     [Header("Status")]
@@ -99,6 +111,8 @@ public class OpenWorldController : MonoBehaviour
     {
         BlockSize = SettingsController.Instance.GetValue<int>(BLOCK_SIZE_SETTING_NAME);
         HalfBlockSize = BlockSize / 2;
+
+        BlockOutRescale = SettingsController.Instance.GetValue<int>(BLOCK_OUT_RESCALE);
     }
 
     public void SetUniverseCenter(long blockX, long blockZ)
@@ -121,32 +135,7 @@ public class OpenWorldController : MonoBehaviour
 
         openWorldBlock =  Blocks[element];
 
-        //correct block positions
-        openWorldBlock.BlockX = BlockX;
-        openWorldBlock.BlockZ = BlockZ;
-
-
-        long BlockDeltaX = BlockX - BlockCenterX;
-        long BlockDeltaZ = BlockZ - BlockCenterZ;
-
-
-        openWorldBlock.transform.position = new Vector3(BlockSize * BlockDeltaX, 0, BlockSize * BlockDeltaZ);
-
-        //if (BlockX > 0)
-        //{
-        //    BlockX -= 1;
-        //}
-        ////else, ignore
-
-        //if (BlockZ > 0)
-        //{
-        //    BlockZ -= 1;
-        //}
-        ////else, ignore
-
-        //openWorldBlock.transform.position = new Vector3(BlockSize * BlockX, 0, BlockSize * BlockZ);
-
-        openWorldBlock.Refresh();
+        openWorldBlock.Refresh(BlockX, BlockZ);
 
         CurrentBlock = openWorldBlock;
     }
@@ -195,6 +184,23 @@ public class OpenWorldController : MonoBehaviour
         }
     }
 
+    private void ReCenter(long BlockX, long BlockZ)
+    {
+        BlockCenterX = BlockX;
+        BlockCenterZ = BlockZ;
+
+        //move current object to center
+        Locator.MoveEntity.Position.TranslateToCenter();
+
+        //correct all existing blocks based on current position
+        foreach( var block in Blocks )
+        {
+            block.Refresh( block.BlockX, block.BlockZ );
+        }
+
+        Log.Instance.Info(OpenWorldController.LOG_SOURCE, $"Block [{BlockX}, {BlockZ}] Is now center of universe");
+    }
+
     public void Reposition(long BlockX, long BlockZ)
     {
         if ( (Blocks.Length != 0) && (this.BlockX == BlockX ) && (this.BlockZ == BlockZ) )
@@ -203,6 +209,17 @@ public class OpenWorldController : MonoBehaviour
         }
         else
         {
+            if( BlockX > (BlockCenterX + BlockOutRescale) ||
+                BlockZ > (BlockCenterZ + BlockOutRescale) ||
+                BlockX < (BlockCenterX - BlockOutRescale) ||
+                BlockZ < (BlockCenterZ - BlockOutRescale)
+                )
+            {
+                //we moved outside the range, Recenter
+                ReCenter(BlockX, BlockZ);
+            }
+            //else - skip, we are within the block limit range
+
             //block position changed
             UpdateBlocks(BlockX, BlockZ);
 

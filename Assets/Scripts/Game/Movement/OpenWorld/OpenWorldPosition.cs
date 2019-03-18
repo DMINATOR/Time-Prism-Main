@@ -20,6 +20,11 @@ public class OpenWorldPosition : MonoBehaviour
     [Tooltip("Current position in Unity coordinates")]
     public float UnityZ;
 
+    public void TranslateToCenter()
+    {
+        this.transform.position = Vector3.zero;
+    }
+
     public void Translate(Vector3 vector, Transform cameraTransform, Transform shipTransform)
     {
         this.transform.Translate(vector, cameraTransform);
