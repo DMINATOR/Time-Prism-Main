@@ -186,14 +186,14 @@ public class OpenWorldController : MonoBehaviour
 
     private void ReCenter(long BlockX, long BlockZ)
     {
+        Locator.MoveEntity.Position.TranslateToCenter(OpenWorldController.Instance.CurrentBlock);
+
+        //move current object to center
         BlockCenterX = BlockX;
         BlockCenterZ = BlockZ;
 
-        //move current object to center
-        Locator.MoveEntity.Position.TranslateToCenter();
-
         //correct all existing blocks based on current position
-        foreach( var block in Blocks )
+        foreach ( var block in Blocks )
         {
             block.Refresh( block.BlockX, block.BlockZ );
         }
@@ -209,23 +209,24 @@ public class OpenWorldController : MonoBehaviour
         }
         else
         {
-            if( BlockX > (BlockCenterX + BlockOutRescale) ||
-                BlockZ > (BlockCenterZ + BlockOutRescale) ||
-                BlockX < (BlockCenterX - BlockOutRescale) ||
-                BlockZ < (BlockCenterZ - BlockOutRescale)
-                )
-            {
-                //we moved outside the range, Recenter
-                ReCenter(BlockX, BlockZ);
-            }
-            //else - skip, we are within the block limit range
-
             //block position changed
             UpdateBlocks(BlockX, BlockZ);
 
             //remember current position
             this.BlockX = BlockX;
             this.BlockZ = BlockZ;
+
+            if (BlockX > (BlockCenterX + BlockOutRescale) ||
+                 BlockZ > (BlockCenterZ + BlockOutRescale) ||
+                 BlockX < (BlockCenterX - BlockOutRescale) ||
+                 BlockZ < (BlockCenterZ - BlockOutRescale)
+                 )
+            {
+                //we moved outside the range, Recenter
+                ReCenter(BlockX, BlockZ);
+            }
+            //else - skip, we are within the block limit range
+
 
             //assign current block and load it
             OpenWorldController.Instance.CurrentBlock.GenerateIfNotLoaded();

@@ -20,9 +20,23 @@ public class OpenWorldPosition : MonoBehaviour
     [Tooltip("Current position in Unity coordinates")]
     public float UnityZ;
 
-    public void TranslateToCenter()
+    public void TranslateToCenter(OpenWorldBlock block)
     {
-        this.transform.position = Vector3.zero;
+        Vector3 sourcePoint = new Vector3(
+           OpenWorldController.Instance.BlockSize * block.BlockDeltaX,
+           this.transform.position.y,
+           OpenWorldController.Instance.BlockSize * block.BlockDeltaZ);
+
+        Vector3 targetPoint = new Vector3(
+           this.transform.position.x,
+           this.transform.position.y,
+           this.transform.position.z);
+
+        Vector3 currentVector = targetPoint - sourcePoint;
+
+        //translate to the new position
+
+        this.transform.position = currentVector;
     }
 
     public void Translate(Vector3 vector, Transform cameraTransform, Transform shipTransform)
@@ -39,7 +53,7 @@ public class OpenWorldPosition : MonoBehaviour
         long worldCorrectionX = OpenWorldController.Instance.BlockCenterX;
         long worldCorrectionZ = OpenWorldController.Instance.BlockCenterZ;
 
-        if (shipTransform.position.x > 0 )
+        if (shipTransform.position.x > 0)
         {
             blockCorrectionX = OpenWorldController.Instance.BlockSize;
             worldCorrectionX -= 1;
@@ -59,7 +73,7 @@ public class OpenWorldPosition : MonoBehaviour
         else if (shipTransform.position.z < 0)
         {
             blockCorrectionZ = -OpenWorldController.Instance.BlockSize;
-           // worldCorrectionZ += 1;
+            // worldCorrectionZ += 1;
         }
         //else 0
 

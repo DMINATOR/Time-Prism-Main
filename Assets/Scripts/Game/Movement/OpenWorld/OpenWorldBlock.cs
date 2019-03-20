@@ -14,6 +14,24 @@ public class OpenWorldBlock : MonoBehaviour
     [Tooltip("Current block position in the universe")]
     public long BlockZ;
 
+
+    public long BlockDeltaX
+    {
+        get
+        {
+            return BlockX - OpenWorldController.Instance.BlockCenterX;
+        }
+    }
+
+
+    public long BlockDeltaZ
+    {
+        get
+        {
+            return BlockZ - OpenWorldController.Instance.BlockCenterZ;
+        }
+    }
+
     [ReadOnly]
     [Tooltip("Indicates that this block was Loaded")]
     public bool Loaded;
@@ -37,12 +55,9 @@ public class OpenWorldBlock : MonoBehaviour
         this.BlockX = BlockX;
         this.BlockZ = BlockZ;
 
-        long BlockDeltaX = BlockX - OpenWorldController.Instance.BlockCenterX;
-        long BlockDeltaZ = BlockZ - OpenWorldController.Instance.BlockCenterZ;
-
         gameObject.transform.position = new Vector3(OpenWorldController.Instance.BlockSize * BlockDeltaX, 0, OpenWorldController.Instance.BlockSize * BlockDeltaZ);
 
-        Log.Instance.Info(OpenWorldController.LOG_SOURCE, $"Block [{BlockX}, {BlockZ}] Refresh");
+        Log.Instance.Info(OpenWorldController.LOG_SOURCE, $"Block [{BlockX}, {BlockZ}] D[{BlockDeltaX},{BlockDeltaZ}] Refresh");
         Locator.DebugBlockName.text = $"{BlockX},{BlockZ}";
         Loaded = false; //unload if anything was loaded
     }
