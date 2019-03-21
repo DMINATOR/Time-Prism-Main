@@ -112,6 +112,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &240270556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 240270557}
+  m_Layer: 0
+  m_Name: Projectiles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &240270557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240270556}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 733414522}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &669066066
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,8 +219,10 @@ GameObject:
   - component: {fileID: 733414522}
   - component: {fileID: 733414523}
   - component: {fileID: 733414524}
+  - component: {fileID: 733414525}
+  - component: {fileID: 733414526}
   m_Layer: 0
-  m_Name: PlayerEntity
+  m_Name: RootEntity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,6 +242,7 @@ Transform:
   - {fileID: 912626258}
   - {fileID: 1960117646}
   - {fileID: 980840887}
+  - {fileID: 240270557}
   m_Father: {fileID: 1562023575}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -233,9 +266,7 @@ MonoBehaviour:
     InputKey: 1
   ButtonRotation:
     InputKey: 6
-  Camera: {fileID: 912626257}
-  Ship: {fileID: 980840886}
-  Position: {fileID: 733414524}
+  Locator: {fileID: 733414526}
 --- !u!114 &733414524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +283,37 @@ MonoBehaviour:
   BlockZ: 0
   UnityX: 0
   UnityZ: 0
+--- !u!114 &733414525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733414521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cebfebaa83466243ac46fd825679e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShootButton:
+    InputKey: 2
+  ProjectilePrefab: {fileID: 6795594715505533150, guid: 3e0432f4aad425d45a7b2cdfa11b4fe4,
+    type: 3}
+--- !u!114 &733414526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733414521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8838b073a9b3f146a842bffa8f15dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 912626257}
+  Ship: {fileID: 980840886}
+  Position: {fileID: 733414524}
 --- !u!1 &912626255
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980840886}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: -0.1}
   m_LocalScale: {x: 0.41515, y: 0.41515, z: 0.41515}
   m_Children: []
   m_Father: {fileID: 733414522}

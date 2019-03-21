@@ -186,7 +186,7 @@ public class OpenWorldController : MonoBehaviour
 
     private void ReCenter(long BlockX, long BlockZ)
     {
-        Locator.MoveEntity.Position.TranslateToCenter(OpenWorldController.Instance.CurrentBlock);
+        Locator.MoveEntity.Locator.Position.TranslateToCenter(OpenWorldController.Instance.CurrentBlock);
 
         //move current object to center
         BlockCenterX = BlockX;

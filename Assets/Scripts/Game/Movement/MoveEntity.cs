@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(OpenWorldPosition))]
+[RequireComponent(typeof(MoveEntityLocator))]
 public class MoveEntity : MonoBehaviour
 {
     public float MovementForce;
@@ -13,10 +14,7 @@ public class MoveEntity : MonoBehaviour
 
     public InputButton ButtonRotation;
 
-    public Camera Camera;
-    public GameObject Ship;
-
-    public OpenWorldPosition Position;
+    public MoveEntityLocator Locator;
 
     // Update is called once per frame
     void Update()
@@ -39,7 +37,7 @@ public class MoveEntity : MonoBehaviour
 
         float rotation = Input.GetAxis(ButtonRotation.KeyName) * RotationForce * Time.deltaTime;
 
-        Position.Translate(vector, Camera.transform, Ship.transform);
+        Locator.Position.Translate(vector, Locator.Camera.transform, Locator.Ship.transform);
         transform.Rotate(Vector3.up, rotation);
     }
 }
