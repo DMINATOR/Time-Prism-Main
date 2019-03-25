@@ -135,7 +135,7 @@ public class OpenWorldController : MonoBehaviour
 
         openWorldBlock =  Blocks[element];
 
-        openWorldBlock.Refresh(BlockX, BlockZ);
+        openWorldBlock.Refresh(BlockX, BlockZ, true);
 
         CurrentBlock = openWorldBlock;
     }
@@ -195,7 +195,7 @@ public class OpenWorldController : MonoBehaviour
         //correct all existing blocks based on current position
         foreach ( var block in Blocks )
         {
-            block.Refresh( block.BlockX, block.BlockZ );
+            block.Refresh( block.BlockX, block.BlockZ, false );
         }
 
         Log.Instance.Info(OpenWorldController.LOG_SOURCE, $"Block [{BlockX}, {BlockZ}] Is now center of universe");

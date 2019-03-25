@@ -67,20 +67,25 @@ public class OpenWorldBlock : MonoBehaviour
         });
     }
 
-    public void Refresh(long BlockX, long BlockZ)
+    public void Refresh(long BlockX, long BlockZ, bool unload)
     {
         //correct block positions
         this.BlockX = BlockX;
         this.BlockZ = BlockZ;
 
         //disable projectiles
-        Projectiles.SetActive(false);
+        if( unload )
+        {
+            Log.Instance.Info(OpenWorldController.LOG_SOURCE, $"Block [{BlockX}, {BlockZ}] UnLoaded");
+            Locator.DebugBlockName.color = UnityEngine.Color.white;
+            Projectiles.SetActive(false);
+            Loaded = false; //unload if anything was loaded
+        }
 
         gameObject.transform.position = new Vector3(OpenWorldController.Instance.BlockSize * BlockDeltaX, 0, OpenWorldController.Instance.BlockSize * BlockDeltaZ);
 
         Log.Instance.Info(OpenWorldController.LOG_SOURCE, $"Block [{BlockX}, {BlockZ}] D[{BlockDeltaX},{BlockDeltaZ}] Refresh");
         Locator.DebugBlockName.text = $"{BlockX},{BlockZ}";
-        Loaded = false; //unload if anything was loaded
     }
 
     public void GenerateIfNotLoaded()
