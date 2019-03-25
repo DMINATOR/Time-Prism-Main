@@ -128,7 +128,7 @@ public class OpenWorldController : MonoBehaviour
         if (Blocks[element] == null )
         {
             //doesn't exist yet, first time load, create new instance:
-            var gameObject = Instantiate(OpenWorldBlockPrefab, new Vector3(-BlockSize, 0, -BlockSize), Quaternion.identity, this.Locator.BlocksGameObject.gameObject.transform);
+            var gameObject = Instantiate(OpenWorldBlockPrefab, new Vector3(-BlockSize, 0, -BlockSize), Quaternion.identity, this.Locator.BlocksGameObjectParent.gameObject.transform);
             Blocks[element] = gameObject.GetComponent<OpenWorldBlock>();
         }
         //else, already exists

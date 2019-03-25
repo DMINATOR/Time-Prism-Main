@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-//Generated on: 17.03.2019 22:37.31
+//Generated on: 24.03.2019 20:28.47
 public class SettingsConstants
 {
 
@@ -13,6 +13,7 @@ public class SettingsConstants
     {
 		BLOCK_SIZE,
 		BLOCK_OUT_RESCALE,
+		PROJECTILES_LIMIT,
 
     }
 
@@ -33,6 +34,14 @@ public class SettingsConstants
 			MinValue = "0",
 			DefaultValue = "3",
 			MaxValue = "100000"
+		});
+		SettingsController.Instance.AddSetting(new SettingValue()
+		{
+			Name = Enum.GetName(typeof(SettingsConstants.Name), Name.PROJECTILES_LIMIT),
+			Type = SettingValueType.Integer,
+			MinValue = "0",
+			DefaultValue = "100",
+			MaxValue = "10000"
 		});
 
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class OpenWorldControllerLocator : MonoBehaviour
 {
     [Tooltip("GameObject that will be used as a parent for blocks that are created")]
-    public GameObject BlocksGameObject;
+    public GameObject BlocksGameObjectParent;
 
     [Tooltip("Main movement entity")]
     public MoveEntity MoveEntity;

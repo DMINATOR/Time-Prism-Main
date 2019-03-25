@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ProjectileShoot : MonoBehaviour
 {
+    [Tooltip("Button to shoot with")]
     public InputButton ShootButton;
 
+    [Tooltip("Prefab to use to shoot with")]
     public GameObject ProjectilePrefab;
 
     // Update is called once per frame
@@ -13,11 +15,7 @@ public class ProjectileShoot : MonoBehaviour
     {
         if (Input.GetButtonDown(ShootButton.KeyName))
         {
-            var gameObject = Instantiate(
-                ProjectilePrefab, 
-                this.transform.position,
-                this.transform.rotation, 
-                this.gameObject.transform);
+            OpenWorldController.Instance.CurrentBlock.Projectiles.Spawn(ProjectilePrefab, this.transform.position, this.transform.rotation);
         }
     }
 }

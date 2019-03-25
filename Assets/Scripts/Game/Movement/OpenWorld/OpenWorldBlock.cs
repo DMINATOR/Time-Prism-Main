@@ -14,6 +14,8 @@ public class OpenWorldBlock : MonoBehaviour
     [Tooltip("Current block position in the universe")]
     public long BlockZ;
 
+    [Tooltip("Cache of currently created projectiles active or inactive")]
+    public GameObjectCache Projectiles;
 
     public long BlockDeltaX
     {
@@ -36,8 +38,24 @@ public class OpenWorldBlock : MonoBehaviour
     [Tooltip("Indicates that this block was Loaded")]
     public bool Loaded;
 
+    [Header("Settings")]
+
+    [ReadOnly]
+    [Tooltip("Settings to load PROJECTILES_LIMIT value")]
+    public SettingsConstants.Name PROJECTILES_LIMIT_SETTING_NAME = SettingsConstants.Name.PROJECTILES_LIMIT;
+
+    [Header("Loaded Settings")]
+
+    [ReadOnly]
+    [Tooltip("Limit of number of projectiles")]
+    public int ProjectilesLimitSize;
+
     public void Start()
     {
+        ProjectilesLimitSize = SettingsController.Instance.GetValue<int>(PROJECTILES_LIMIT_SETTING_NAME);
+
+        Projectiles = new GameObjectCache(Locator.ProjectilesContainer, ProjectilesLimitSize);
+
         //make lines to match the size of the block
         Locator.DebugLineRenderer.SetPositions(new Vector3[]
         {
@@ -54,6 +72,9 @@ public class OpenWorldBlock : MonoBehaviour
         //correct block positions
         this.BlockX = BlockX;
         this.BlockZ = BlockZ;
+
+        //disable projectiles
+        Projectiles.SetActive(false);
 
         gameObject.transform.position = new Vector3(OpenWorldController.Instance.BlockSize * BlockDeltaX, 0, OpenWorldController.Instance.BlockSize * BlockDeltaZ);
 
