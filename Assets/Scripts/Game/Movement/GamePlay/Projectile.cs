@@ -2,17 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(ProjectileLocator))]
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Tooltip("Force for projectile to move at")]
+    public float Force;
+
+    public ProjectileLocator Locator;
+
+    Vector3 _startVelocity;
+
+    private void Awake()
     {
-        
+        _startVelocity = Vector3.forward * Force; 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        Locator.RigidBody.position = this.gameObject.transform.position;
+        Locator.RigidBody.rotation = this.gameObject.transform.rotation;
+        Locator.RigidBody.velocity = this.gameObject.transform.rotation * _startVelocity;
     }
 }
