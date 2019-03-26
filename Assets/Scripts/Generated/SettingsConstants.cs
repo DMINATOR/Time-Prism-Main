@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-//Generated on: 24.03.2019 20:28.47
+//Generated on: 25.03.2019 21:06.26
 public class SettingsConstants
 {
 

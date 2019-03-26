@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileShoot : MonoBehaviour
+public class ProjectileShooter : MonoBehaviour
 {
     [Tooltip("Button to shoot with")]
     public InputButton ShootButton;
