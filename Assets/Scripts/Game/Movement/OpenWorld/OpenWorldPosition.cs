@@ -39,10 +39,8 @@ public class OpenWorldPosition : MonoBehaviour
         this.transform.position = currentVector;
     }
 
-    public void Translate(Vector3 vector, Transform cameraTransform, Transform shipTransform)
+    public void Translate(Transform shipTransform)
     {
-        this.transform.Translate(vector, cameraTransform);
-
         //save current unity coordinates
         UnityX = shipTransform.position.x;
         UnityZ = shipTransform.position.z;
@@ -61,7 +59,6 @@ public class OpenWorldPosition : MonoBehaviour
         else if (shipTransform.position.x < 0)
         {
             blockCorrectionX = -OpenWorldController.Instance.BlockSize;
-            //worldCorrectionX += 1;
         }
         //else 0
 
@@ -73,7 +70,6 @@ public class OpenWorldPosition : MonoBehaviour
         else if (shipTransform.position.z < 0)
         {
             blockCorrectionZ = -OpenWorldController.Instance.BlockSize;
-            // worldCorrectionZ += 1;
         }
         //else 0
 

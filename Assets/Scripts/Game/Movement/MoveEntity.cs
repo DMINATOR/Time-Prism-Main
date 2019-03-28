@@ -32,12 +32,22 @@ public class MoveEntity : MonoBehaviour
         {
             float vertical = Input.GetAxis(ButtonMoveVertical.KeyName) * MovementForce * Time.deltaTime;
 
-            vector += Vector3.up * vertical;
+            vector += Vector3.forward * vertical;
         }
 
         float rotation = Input.GetAxis(ButtonRotation.KeyName) * RotationForce * Time.deltaTime;
 
-        Locator.Position.Translate(vector, Locator.Camera.transform, Locator.Ship.transform);
+        transform.Translate(vector, Space.Self);
+        //transform.Translate(vector, Locator.Camera.transform);
+
+        //Vector3 newPosition = Locator.Camera.transform.position + vector;
+        //transform.position = newPosition;
+
+        //var newPos = transform.position + transform.TransformDirection(amount);
+
+
+
+        Locator.Position.Translate(Locator.Ship.transform);
         transform.Rotate(Vector3.up, rotation);
     }
 }
