@@ -44,6 +44,17 @@ public class GameController : MonoBehaviour
         Log.Instance.Info(GameController.LOG_SOURCE, $"Game Data Loaded");
     }
 
+    //Debug
+
+    [Header("Debug")]
+
+    [Tooltip("Shows control objects")]
+    public bool DebugShowControlObjects;
+
+    [Tooltip("For how long to show the game objects")]
+    public float DebugShowControlObjectsTime = 10f;
+
+
     private void SaveGameData()
     {
         Log.Instance.Info(GameController.LOG_SOURCE, $"Game Data Saving");

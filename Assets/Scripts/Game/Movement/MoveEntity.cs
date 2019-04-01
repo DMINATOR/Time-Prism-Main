@@ -20,34 +20,32 @@ public class MoveEntity : MonoBehaviour
     void Update()
     {
         var vector = new Vector3();
+        var horizontal = 0.0f;
+        var vertical = 0.0f;
 
         if (Input.GetButton(ButtonMoveHorizontal.KeyName))
         {
-            float horizontal = Input.GetAxis(ButtonMoveHorizontal.KeyName) * MovementForce * Time.deltaTime;
+            horizontal = Input.GetAxis(ButtonMoveHorizontal.KeyName) * MovementForce * Time.deltaTime;
 
             vector = Vector3.right * horizontal;
         }
 
         if (Input.GetButton(ButtonMoveVertical.KeyName))
         {
-            float vertical = Input.GetAxis(ButtonMoveVertical.KeyName) * MovementForce * Time.deltaTime;
+            vertical = Input.GetAxis(ButtonMoveVertical.KeyName) * MovementForce * Time.deltaTime;
 
             vector += Vector3.forward * vertical;
         }
 
-        float rotation = Input.GetAxis(ButtonRotation.KeyName) * RotationForce * Time.deltaTime;
+        float rotation = Input.GetAxis(ButtonRotation.KeyName) * RotationForce * Time.deltaTime * Mathf.PI;
 
-        transform.Translate(vector, Space.Self);
-        //transform.Translate(vector, Locator.Camera.transform);
+        if (horizontal != 0.0f  || vertical != 0.0f || rotation != 0.0f )
+        {
+            var rotationQ = transform.rotation * Quaternion.Euler(Vector3.up * rotation);
 
-        //Vector3 newPosition = Locator.Camera.transform.position + vector;
-        //transform.position = newPosition;
+            Locator.TimeControlObject.LogAndTranslateTo(transform.position + transform.rotation * vector, rotationQ);
 
-        //var newPos = transform.position + transform.TransformDirection(amount);
-
-
-
-        Locator.Position.Translate(Locator.Ship.transform);
-        transform.Rotate(Vector3.up, rotation);
+            Locator.Position.Translate(Locator.Ship.transform);
+        }
     }
 }

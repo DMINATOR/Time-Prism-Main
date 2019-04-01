@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-//Generated on: 28.03.2019 20:28.35
+//Generated on: 01.04.2019 20:35.48
 public class SettingsConstants
 {
 
@@ -15,6 +15,7 @@ public class SettingsConstants
 		BLOCK_OUT_RESCALE,
 		PROJECTILES_LIMIT,
 		TIME_CONTROL_ELEMENTS_SIZE,
+		TIME_CONTROL_CHANGE_DIFFERENCE,
 
     }
 
@@ -51,6 +52,14 @@ public class SettingsConstants
 			MinValue = "0",
 			DefaultValue = "100",
 			MaxValue = "10000"
+		});
+		SettingsController.Instance.AddSetting(new SettingValue()
+		{
+			Name = Enum.GetName(typeof(SettingsConstants.Name), Name.TIME_CONTROL_CHANGE_DIFFERENCE),
+			Type = SettingValueType.Float,
+			MinValue = "0",
+			DefaultValue = "0,1",
+			MaxValue = "1"
 		});
 
     }
