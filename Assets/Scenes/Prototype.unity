@@ -153,6 +153,7 @@ MonoBehaviour:
     Modified:
       _dateTimeValue: 01/01/0001 00:00:00
   DebugShowControlObjects: 1
+  DebugShowControlObjectsTime: 1
 --- !u!4 &669066068
 Transform:
   m_ObjectHideFlags: 0
@@ -254,6 +255,22 @@ MonoBehaviour:
   BlockZ: 0
   UnityX: 0
   UnityZ: 0
+  TranslateToCenterCallback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 733414523}
+        m_MethodName: CorrectOnWorldTranslateToCenter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &733414525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,6 +615,10 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 0}
     DeltaTime: 0
   - Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
+    DeltaTime: 0
+  LastElementActual:
+    Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 0, y: 0, z: 0, w: 0}
     DeltaTime: 0
 --- !u!1 &912626255

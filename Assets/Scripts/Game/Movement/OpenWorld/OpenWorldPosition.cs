@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class OpenWorldPosition : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class OpenWorldPosition : MonoBehaviour
     [Tooltip("Current position in Unity coordinates")]
     public float UnityZ;
 
+
+    [Tooltip("Event to call when OpenWorldPosition is translated to center")]
+    public UnityEvent TranslateToCenterCallback;
+
+
     public void TranslateToCenter(OpenWorldBlock block)
     {
         Vector3 sourcePoint = new Vector3(
@@ -34,9 +40,10 @@ public class OpenWorldPosition : MonoBehaviour
 
         Vector3 currentVector = targetPoint - sourcePoint;
 
-        //translate to the new position
-
         this.transform.position = currentVector;
+
+        //translate to the new position
+        TranslateToCenterCallback.Invoke();
     }
 
     public void Translate(Transform shipTransform)

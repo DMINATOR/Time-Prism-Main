@@ -16,6 +16,16 @@ public class MoveEntity : MonoBehaviour
 
     public MoveEntityLocator Locator;
 
+    /// <summary>
+    /// Method to call, to correct when open world block changes
+    /// </summary>
+    public void CorrectOnWorldTranslateToCenter()
+    {
+        Locator.TimeControlObject.LogAndTranslateToPointInstantly(transform.position, transform.rotation);
+
+        Locator.Position.Translate(Locator.Ship.transform);
+    }
+
     // Update is called once per frame
     void Update()
     {
