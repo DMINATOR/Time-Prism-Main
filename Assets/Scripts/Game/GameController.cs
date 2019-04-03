@@ -51,6 +51,9 @@ public class GameController : MonoBehaviour
     [Tooltip("Shows control objects")]
     public bool DebugShowControlObjects;
 
+    [Tooltip("Shows control objects full path")]
+    public bool DebugShowControlObjectsFullPath;
+
     [Tooltip("For how long to show the game objects")]
     public float DebugShowControlObjectsTime = 10f;
 
