@@ -35,19 +35,19 @@ public class MoveEntity : MonoBehaviour
 
         if (Input.GetButton(ButtonMoveHorizontal.KeyName))
         {
-            horizontal = Input.GetAxis(ButtonMoveHorizontal.KeyName) * MovementForce * Time.deltaTime;
+            horizontal = Input.GetAxis(ButtonMoveHorizontal.KeyName) * MovementForce * TimeControlController.Instance.TimeScaleDelta;
 
             vector = Vector3.right * horizontal;
         }
 
         if (Input.GetButton(ButtonMoveVertical.KeyName))
         {
-            vertical = Input.GetAxis(ButtonMoveVertical.KeyName) * MovementForce * Time.deltaTime;
+            vertical = Input.GetAxis(ButtonMoveVertical.KeyName) * MovementForce * TimeControlController.Instance.TimeScaleDelta;
 
             vector += Vector3.forward * vertical;
         }
 
-        float rotation = Input.GetAxis(ButtonRotation.KeyName) * RotationForce * Time.deltaTime * Mathf.PI;
+        float rotation = Input.GetAxis(ButtonRotation.KeyName) * RotationForce * TimeControlController.Instance.TimeScaleDelta * Mathf.PI;
 
         if (horizontal != 0.0f  || vertical != 0.0f || rotation != 0.0f )
         {
