@@ -21,8 +21,6 @@ public class OpenWorldController : MonoBehaviour
     //Public instance to game controller
     public static OpenWorldController Instance = null;
 
-
-
     //Exposed
 
     [Header("Locator")]

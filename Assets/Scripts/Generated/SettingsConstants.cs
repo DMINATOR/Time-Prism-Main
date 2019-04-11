@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-//Generated on: 01.04.2019 20:35.48
+//Generated on: 09.04.2019 21:26.47
 public class SettingsConstants
 {
 
@@ -58,7 +58,7 @@ public class SettingsConstants
 			Name = Enum.GetName(typeof(SettingsConstants.Name), Name.TIME_CONTROL_CHANGE_DIFFERENCE),
 			Type = SettingValueType.Float,
 			MinValue = "0",
-			DefaultValue = "0,1",
+			DefaultValue = "0,2",
 			MaxValue = "1"
 		});
 
