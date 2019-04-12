@@ -41,6 +41,8 @@ public class MoveEntity : MonoBehaviour
         var horizontal = 0.0f;
         var vertical = 0.0f;
 
+        TimeScaleInstance.Update();
+
         if (Input.GetButton(ButtonMoveHorizontal.KeyName))
         {
             horizontal = Input.GetAxis(ButtonMoveHorizontal.KeyName) * MovementForce * TimeScaleInstance.TimeScaleDelta;

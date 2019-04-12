@@ -24,6 +24,8 @@ public class UIPanelTimePrism : MonoBehaviour
 
     public void UpdateOnTimeScaleChanged()
     {
+        TimeScaleInstance.Update();
+
         //TODO
         //Locator.RotateAroundAxis.Speed = Mathf.Abs(TimeControlController.Instance.TimeScale * RotationScale); //Always positive
         //Locator.TextSpeed.text = TimeControlController.Instance.TimeScale.ToString();
