@@ -129,7 +129,7 @@ GameObject:
   m_Layer: 0
   m_Name: Applicator Volume
   m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -141,8 +141,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 113470879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.99, y: 0, z: -11.42}
-  m_LocalScale: {x: 42.105633, y: 1.5814, z: 3.6746}
+  m_LocalPosition: {x: 7.99, y: 0, z: -18.94}
+  m_LocalScale: {x: 42.105633, y: 1.5814, z: 16.87}
   m_Children: []
   m_Father: {fileID: 1769440489}
   m_RootOrder: 1
@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Option: 0
-  TargetPointDelta: {x: 0, y: 0, z: -10}
+  TargetPointDelta: {x: 0, y: 0, z: -40}
   Speed: 5
 --- !u!1 &610443243
 GameObject:
@@ -688,6 +688,11 @@ MonoBehaviour:
   Affection: {fileID: 1890491487}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
+  _timeScaleAffectionCache: 0
+  _timeScaleTarget: 0
+  _affectionSpeed: 0.1
+  _affectionMax: 0
+  _affectionCounter: 0
 --- !u!1 &969052226
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Option: 0
-  TargetPointDelta: {x: 0, y: 0, z: -10}
+  TargetPointDelta: {x: 0, y: 0, z: -40}
   Speed: 5
 --- !u!135 &1050023436
 SphereCollider:
@@ -918,6 +923,11 @@ MonoBehaviour:
   Affection: {fileID: 1890491487}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
+  _timeScaleAffectionCache: 0
+  _timeScaleTarget: 0
+  _affectionSpeed: 0.1
+  _affectionMax: 0
+  _affectionCounter: 0
 --- !u!1 &1131326416
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,6 +973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Affection Area
   _timeScale: 3.09
+  _speed: 1
 --- !u!1 &1304773934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,6 +1166,11 @@ MonoBehaviour:
   Affection: {fileID: 1840201937}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
+  _timeScaleAffectionCache: 0
+  _timeScaleTarget: 0
+  _affectionSpeed: 0.1
+  _affectionMax: 0
+  _affectionCounter: 0
 --- !u!1 &1574897993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,6 +1686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 2x speed
   _timeScale: 2
+  _speed: 0.1
 --- !u!1 &1890491485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,6 +1732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Half speed
   _timeScale: 0.5
+  _speed: 0.1
 --- !u!1 &1900204940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,6 +1809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Default override
   _timeScale: 1
+  _speed: 0.1
 --- !u!1 &2075365481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,7 +1858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Option: 0
-  TargetPointDelta: {x: 0, y: 0, z: -10}
+  TargetPointDelta: {x: 0, y: 0, z: -40}
   Speed: 5
 --- !u!135 &2075365484
 SphereCollider:
@@ -1914,3 +1933,8 @@ MonoBehaviour:
   Affection: {fileID: 1840201937}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
+  _timeScaleAffectionCache: 0
+  _timeScaleTarget: 0
+  _affectionSpeed: 0.1
+  _affectionMax: 0
+  _affectionCounter: 0
