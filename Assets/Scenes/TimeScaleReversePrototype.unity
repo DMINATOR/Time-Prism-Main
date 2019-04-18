@@ -357,6 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1863940030}
   - component: {fileID: 1863940025}
+  - component: {fileID: 1863940026}
   m_Layer: 0
   m_Name: RootEntity
   m_TagString: Untagged
@@ -682,6 +683,26 @@ MonoBehaviour:
     Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 0, y: 0, z: 0, w: 0}
     DeltaTime: 0
+--- !u!114 &1863940026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863940024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7d76393f36db342b5fb4ffd5af311d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotationForce: 5
+  MovementForce: 5
+  ButtonMoveHorizontal:
+    InputKey: 0
+  ButtonMoveVertical:
+    InputKey: 1
+  ButtonRotation:
+    InputKey: 6
 --- !u!4 &1863940030
 Transform:
   m_ObjectHideFlags: 0
