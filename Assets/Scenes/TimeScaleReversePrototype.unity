@@ -626,6 +626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 765352006}
   - component: {fileID: 765352005}
+  - component: {fileID: 765352007}
   m_Layer: 0
   m_Name: TimeControl
   m_TagString: Untagged
@@ -669,6 +670,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &765352007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765352004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d64d0ef4097f5143acdb799089f80f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Steps:
+  - Groups:
+    - TimeScale: 4
+      Affector: {fileID: 1466737141}
+    - TimeScale: 4
+      Affector: {fileID: 177967117}
+  - Groups:
+    - TimeScale: 1
+      Affector: {fileID: 1466737141}
+    - TimeScale: 1
+      Affector: {fileID: 177967117}
+  - Groups:
+    - TimeScale: 1
+      Affector: {fileID: 1466737141}
+    - TimeScale: 0
+      Affector: {fileID: 177967117}
+  - Groups:
+    - TimeScale: 1
+      Affector: {fileID: 1466737141}
+    - TimeScale: -1
+      Affector: {fileID: 177967117}
+  Position: 0
+  DefaultPosition: 0
+  ButtonScaleUp:
+    InputKey: 11
+  ButtonScaleDown:
+    InputKey: 12
 --- !u!1 &1034726501
 GameObject:
   m_ObjectHideFlags: 0

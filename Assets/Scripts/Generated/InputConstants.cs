@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-//Generated on: 17.04.2019 22:08.22
+//Generated on: 20.04.2019 0:26.05
 public class InputMapping
 {
 
@@ -21,6 +21,8 @@ public class InputMapping
 		MouseScrollWheel,
 		Submit,
 		Cancel,
+		TimeScaleUp,
+		TimeScaleDown,
 
     }
 
@@ -118,6 +120,18 @@ public class InputMapping
 		{
 			new InputMappingKey(){
 			 Name = "Cancel", DescriptiveName = "", DescriptiveNegativeName = "", NegativeButton = "", PositiveButton = "escape", AltNegativeButton = "", AltPositiveButton = "joystick button 1"
+			}
+		});
+		InputController.Instance.Add(InputMappingKeyName.TimeScaleUp, new List<InputMappingKey>()
+		{
+			new InputMappingKey(){
+			 Name = "Time Scale Up", DescriptiveName = "", DescriptiveNegativeName = "", NegativeButton = "", PositiveButton = "q", AltNegativeButton = "", AltPositiveButton = "joystick button 1"
+			}
+		});
+		InputController.Instance.Add(InputMappingKeyName.TimeScaleDown, new List<InputMappingKey>()
+		{
+			new InputMappingKey(){
+			 Name = "Time Scale Down", DescriptiveName = "", DescriptiveNegativeName = "", NegativeButton = "", PositiveButton = "e", AltNegativeButton = "", AltPositiveButton = "joystick button 1"
 			}
 		});
 
