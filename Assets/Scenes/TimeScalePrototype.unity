@@ -696,10 +696,8 @@ MonoBehaviour:
   Affection: {fileID: 1890491487}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
-  _timeScaleAffectionCache: 0
   _timeScaleTarget: 0
-  _affectionSpeed: 0.1
-  _affectionMax: 0
+  _affectionDuration: 0
   _affectionCounter: 0
 --- !u!1 &969052226
 GameObject:
@@ -931,10 +929,8 @@ MonoBehaviour:
   Affection: {fileID: 1890491487}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
-  _timeScaleAffectionCache: 0
   _timeScaleTarget: 0
-  _affectionSpeed: 0.1
-  _affectionMax: 0
+  _affectionDuration: 0
   _affectionCounter: 0
 --- !u!1 &1131326416
 GameObject:
@@ -981,7 +977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Affection Area
   _timeScale: 3.09
-  _affectionSpeed: 0.1
+  _affectionSpeed: 5
 --- !u!1 &1304773934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,10 +1192,8 @@ MonoBehaviour:
   Affection: {fileID: 1840201937}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
-  _timeScaleAffectionCache: 0
   _timeScaleTarget: 0
-  _affectionSpeed: 0.1
-  _affectionMax: 0
+  _affectionDuration: 0
   _affectionCounter: 0
 --- !u!1 &1574897993
 GameObject:
@@ -1359,6 +1353,9 @@ MonoBehaviour:
   ElementsSize: 0
   ThresholdChangeDifference: 0
   _timeScale: 1
+  DebugShowControlObjects: 0
+  DebugShowControlObjectsFullPath: 0
+  DebugShowControlObjectsTime: 10
   Override: {fileID: 1967115197}
 --- !u!4 &1657550750
 Transform:
@@ -1763,7 +1760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Half speed
   _timeScale: 0.5
-  _affectionSpeed: 0.1
+  _affectionSpeed: 5
 --- !u!1 &1900204940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,8 +1961,6 @@ MonoBehaviour:
   Affection: {fileID: 1840201937}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
-  _timeScaleAffectionCache: 0
   _timeScaleTarget: 0
-  _affectionSpeed: 0.1
-  _affectionMax: 0
+  _affectionDuration: 0
   _affectionCounter: 0

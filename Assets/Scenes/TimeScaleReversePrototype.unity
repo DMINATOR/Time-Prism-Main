@@ -519,7 +519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &703376797
 Transform:
   m_ObjectHideFlags: 0
@@ -623,10 +623,8 @@ MonoBehaviour:
   Affection: {fileID: 177967117}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
-  _timeScaleAffectionCache: 0
   _timeScaleTarget: 0
-  _affectionSpeed: 0
-  _affectionMax: 0
+  _affectionDuration: 0
   _affectionCounter: 0
 --- !u!1 &720732974
 GameObject:
@@ -648,7 +646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &720732975
 Transform:
   m_ObjectHideFlags: 0
@@ -752,10 +750,8 @@ MonoBehaviour:
   Affection: {fileID: 177967117}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
-  _timeScaleAffectionCache: 0
   _timeScaleTarget: 0
-  _affectionSpeed: 0
-  _affectionMax: 0
+  _affectionDuration: 0
   _affectionCounter: 0
 --- !u!1 &765352004
 GameObject:
@@ -958,10 +954,8 @@ MonoBehaviour:
   Affection: {fileID: 177967117}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
-  _timeScaleAffectionCache: 0
   _timeScaleTarget: 0
-  _affectionSpeed: 0
-  _affectionMax: 0
+  _affectionDuration: 0
   _affectionCounter: 0
 --- !u!1 &1034726501
 GameObject:
@@ -983,7 +977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1034726502
 Transform:
   m_ObjectHideFlags: 0
@@ -1087,10 +1081,8 @@ MonoBehaviour:
   Affection: {fileID: 177967117}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
-  _timeScaleAffectionCache: 0
   _timeScaleTarget: 0
-  _affectionSpeed: 0
-  _affectionMax: 0
+  _affectionDuration: 0
   _affectionCounter: 0
 --- !u!1 &1121647743
 GameObject:
@@ -1188,10 +1180,8 @@ MonoBehaviour:
   Affection: {fileID: 1466737141}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
-  _timeScaleAffectionCache: 0
   _timeScaleTarget: 0
-  _affectionSpeed: 0
-  _affectionMax: 0
+  _affectionDuration: 0
   _affectionCounter: 0
 --- !u!114 &1121647748
 MonoBehaviour:
@@ -1564,10 +1554,8 @@ MonoBehaviour:
   Affection: {fileID: 177967117}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
-  _timeScaleAffectionCache: 0
   _timeScaleTarget: 0
-  _affectionSpeed: 0
-  _affectionMax: 0
+  _affectionDuration: 0
   _affectionCounter: 0
 --- !u!1 &1863940024
 GameObject:
@@ -1941,10 +1929,8 @@ MonoBehaviour:
   Affection: {fileID: 1466737141}
   AffectionFromApplicator: {fileID: 0}
   _timeScaleCache: 0
-  _timeScaleAffectionCache: 0
   _timeScaleTarget: 0
-  _affectionSpeed: 0
-  _affectionMax: 0
+  _affectionDuration: 0
   _affectionCounter: 0
 --- !u!4 &1863940030
 Transform:
@@ -2123,7 +2109,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 672637577}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
