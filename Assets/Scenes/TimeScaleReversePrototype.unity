@@ -607,7 +607,7 @@ MonoBehaviour:
   DirectionVectorMax: {x: 2, y: 0, z: 2}
   DirectionVectorMin: {x: -2, y: 0, z: -2}
   CurrentDirection: {x: 0, y: 0, z: 0}
-  ChangeDirectionTime: 1
+  ChangeDirectionTime: 10
 --- !u!114 &703376802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,7 +734,7 @@ MonoBehaviour:
   DirectionVectorMax: {x: 2, y: 0, z: 2}
   DirectionVectorMin: {x: -2, y: 0, z: -2}
   CurrentDirection: {x: 0, y: 0, z: 0}
-  ChangeDirectionTime: 1
+  ChangeDirectionTime: 10
 --- !u!114 &720732981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1065,7 +1065,7 @@ MonoBehaviour:
   DirectionVectorMax: {x: 2, y: 0, z: 2}
   DirectionVectorMin: {x: -2, y: 0, z: -2}
   CurrentDirection: {x: 0, y: 0, z: 0}
-  ChangeDirectionTime: 1
+  ChangeDirectionTime: 10
 --- !u!114 &1034726507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1444,6 +1444,7 @@ GameObject:
   - component: {fileID: 1715140558}
   - component: {fileID: 1715140561}
   - component: {fileID: 1715140562}
+  - component: {fileID: 1715140563}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -1538,7 +1539,7 @@ MonoBehaviour:
   DirectionVectorMax: {x: 2, y: 0, z: 2}
   DirectionVectorMin: {x: -2, y: 0, z: -2}
   CurrentDirection: {x: 0, y: 0, z: 0}
-  ChangeDirectionTime: 1
+  ChangeDirectionTime: 10
 --- !u!114 &1715140562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1557,6 +1558,24 @@ MonoBehaviour:
   _timeScaleTarget: 0
   _affectionDuration: 0
   _affectionCounter: 0
+--- !u!114 &1715140563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715140556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe6282cb0eec7942b23054986d8ce78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentPosition: 0
+  Elements: []
+  LastElementActual:
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
+    DeltaTime: 0
 --- !u!1 &1863940024
 GameObject:
   m_ObjectHideFlags: 0
