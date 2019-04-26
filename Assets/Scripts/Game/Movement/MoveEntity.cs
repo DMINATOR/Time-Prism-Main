@@ -20,7 +20,7 @@ public class MoveEntity : MoveOnKey
 
     protected override void OnPositionChange(Vector3 position, Quaternion rotation)
     {
-        Locator.TimeControlObject.LogAndTranslateTo(position, rotation);
+        Locator.TimeControlObject.RotateAndPosition(position, rotation);
 
         Locator.Position.Translate(Locator.Ship.transform);
     }
