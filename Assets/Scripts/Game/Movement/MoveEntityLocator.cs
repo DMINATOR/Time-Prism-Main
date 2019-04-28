@@ -8,5 +8,4 @@ public class MoveEntityLocator : MonoBehaviour
     public GameObject Ship;
 
     public OpenWorldPosition Position;
-    public TimeControlObject TimeControlObject;
 }

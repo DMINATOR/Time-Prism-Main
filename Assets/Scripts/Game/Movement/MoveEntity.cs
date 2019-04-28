@@ -13,14 +13,14 @@ public class MoveEntity : MoveOnKey
     /// </summary>
     public void CorrectOnWorldTranslateToCenter()
     {
-        Locator.TimeControlObject.LogAndTranslateToPointInstantly(transform.position, transform.rotation);
+        _translation.RotateAndPositionInstant(transform.position, transform.rotation);
 
         Locator.Position.Translate(Locator.Ship.transform);
     }
 
     protected override void OnPositionChange(Vector3 position, Quaternion rotation)
     {
-        Locator.TimeControlObject.RotateAndPosition(position, rotation);
+        _translation.RotateAndPosition(position, rotation);
 
         Locator.Position.Translate(Locator.Ship.transform);
     }
