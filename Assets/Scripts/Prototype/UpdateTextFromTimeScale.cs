@@ -23,6 +23,6 @@ public class UpdateTextFromTimeScale : MonoBehaviour
     {
         TimeScaleInstance.Update();
 
-        _text.text = $"{TimeScaleInstance.AffectionName} : {TimeScaleInstance.AffectionTimeScale.ToString("0.00")} = {TimeScaleInstance.CurrentTime.ToString("0.00")} - {TimeScaleInstance.TimeScaleDelta.ToString("0.00")} Delta";
+        _text.text = $"{TimeScaleInstance.AffectionName} : {TimeScaleInstance.TimeScale.ToString("0.00")} = {TimeScaleInstance.CurrentTime.ToString("0.00")} - {TimeScaleInstance.TimeScaleDelta.ToString("0.00")} Delta";
     }
 }

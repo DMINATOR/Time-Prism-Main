@@ -788,7 +788,7 @@ MonoBehaviour:
   ElementsSize: 0
   ThresholdChangeDifference: 0
   _timeScale: 1
-  DebugShowControlObjects: 0
+  DebugShowControlObjects: 1
   DebugShowControlObjectsFullPath: 0
   DebugShowControlObjectsTime: 10
   Override: {fileID: 0}
@@ -1575,6 +1575,7 @@ MonoBehaviour:
     Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 0, y: 0, z: 0, w: 0}
     DeltaTime: 0
+  LastPositiveTime: 0
   Elements: []
 --- !u!1 &1863940024
 GameObject:
@@ -1612,6 +1613,7 @@ MonoBehaviour:
     Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 0, y: 0, z: 0, w: 0}
     DeltaTime: 0
+  LastPositiveTime: 0
   Elements:
   - Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 0, y: 0, z: 0, w: 0}

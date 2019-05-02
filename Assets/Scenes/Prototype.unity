@@ -168,7 +168,7 @@ MonoBehaviour:
   ElementsSize: 0
   ThresholdChangeDifference: 0
   _timeScale: 1
-  DebugShowControlObjects: 1
+  DebugShowControlObjects: 0
   DebugShowControlObjectsFullPath: 0
   DebugShowControlObjectsTime: 10
   Override: {fileID: 0}
@@ -426,7 +426,6 @@ MonoBehaviour:
   Camera: {fileID: 912626257}
   Ship: {fileID: 980840886}
   Position: {fileID: 733414524}
-  TimeControlObject: {fileID: 733414527}
 --- !u!114 &733414527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,311 +439,308 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentPosition: 0
+  LastPositiveTime: 0
   Elements:
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
-  LastElementActual:
-    Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    DeltaTime: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
+  - DeltaPosition: {x: 0, y: 0, z: 0}
+    DeltaRotation: {x: 0, y: 0, z: 0, w: 0}
+    Time: 0
 --- !u!1 &912626255
 GameObject:
   m_ObjectHideFlags: 0
