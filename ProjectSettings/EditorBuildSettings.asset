@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TimeScaleReversePrototype.unity
+    guid: 023b67c965f5640439ad6e8e497c893a
+  - enabled: 1
     path: Assets/Scenes/Prototype.unity
     guid: 5d5126245c6f81e4ba08b5bbdc6b4460
   m_configObjects: {}
