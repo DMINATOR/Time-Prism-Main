@@ -1260,7 +1260,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 912626257}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 2
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1407,6 +1407,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321092922278938039, guid: f4f09965ebbc0b64c82dff0a83781678,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 123.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4f09965ebbc0b64c82dff0a83781678, type: 3}
